@@ -158,7 +158,13 @@ _pfhHandler = [{
   _ied = _this select 0 select 0;
   _bomber = _this select 0 select 1;
 
+ //Check for THORIII Jamming
+ _iedJammed = _ied getVariable "EODS_Ied_jammed";
 
+ if (isNil "_iedJammed") then {
+
+   _iedJammed = false;
+ };
   //RCIED Phone check (ring ring of death)
   if (_ied isKindOf "EODS_base_ied_cellphone") then {
 
@@ -167,7 +173,7 @@ _pfhHandler = [{
   };
 
     //Checks for x statements before blowing up
-   if ({_x distance _ied < 25} count allPlayers > 0 && (alive _bomber) && (!captive _bomber)) then {
+   if ({_x distance _ied < 25} count allPlayers > 0 && (alive _bomber) && (!captive _bomber) && (!_iedJammed)) then {
 
           [[_ied], "FNC_EODS_EXPLOSION", false, false] spawn BIS_fnc_MP;
       };

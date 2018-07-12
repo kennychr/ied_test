@@ -68,7 +68,7 @@ _ied setVariable ["EODS_Ieds_STATUS_ARMADO", true, true];
 			{
 
 				//burying the IED
-			   //[_ied] spawn FNC_EODS_HIDDEN_OCULTAR;
+			   [_ied] spawn FNC_EODS_HIDDEN_OCULTAR;
 			};
 
 
