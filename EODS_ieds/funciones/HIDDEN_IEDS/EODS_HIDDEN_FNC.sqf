@@ -8,7 +8,7 @@ private ["_ied","_tipoDeTierra","_nuevaTierra","_posicion","_dir"];
 
 _ied = _this select 0;
 //debug
-hintC format ["%1",_ied];
+
 	switch (typeOf _ied) do {
 
    		case "EODS_ied01_armed": {_tipoDeTierra = "EODS_tierra01_ied01"};
