@@ -1,7 +1,7 @@
 /*
  	Name: [EODS] EXPLOSIVE ORDNANCE DISPOSAL SUITE
  	
- 	Author(s): Monovdd (Carlos Alberto Arango Schütz)
+ 	Author(s): Monovdd (Carlos Alberto Arango Schï¿½tz)
 
  	Note: Do not modify this file without permission.
 	
@@ -149,6 +149,26 @@ private ["_todosLosObjetos","_type","_ejecutar","_check","_compararArrays","_con
 		sleep 10;
 	};
 };
+
+_actionPhone = ["EODS_ace_action_phone", "Use phone", "", {
+	createDialog "EODS_IEDS_MENU_PRINCIPAL";
+	[_target, _player] spawn FNC_EODS_PCU_MENU_PRINCIPAL_CHECK;
+}, {true}] call ace_interact_menu_fnc_createAction;
+["EODS_base_ied_cellphone", 0, ["ACE_MainActions"], _actionPhone, true] call ace_interact_menu_fnc_addActionToClass;
+
+_actionDisarm = ["EODS_ace_action_disarm", "Disarm", "", {
+	_nul = [_target] execvm '\EODS_ieds\funciones\PCU\EODS_PCU_INSPEC_OBJ.sqf';
+}, {true}] call ace_interact_menu_fnc_createAction;
+{
+	[_x, 0, ["ACE_MainActions"], _actionDisarm, true] call ace_interact_menu_fnc_addActionToClass;
+} forEach EODS_ied_tierras;
+
+_actionInspect = ["EODS_ace_action_inspect", "Inspect", "", {
+	[_target] execvm '\EODS_ieds\funciones\PCU\EODS_PCU_INSPEC_OBJ.sqf';
+}, {true}] call ace_interact_menu_fnc_createAction;
+{
+	[_x, 0, ["ACE_MainActions"], _actionInspect, true] call ace_interact_menu_fnc_addActionToClass;
+} forEach EODS_IEDS_PCU_OBJETOS_ESCONDER;
 
 FNC_EODS_OBJETOS_INTERAC_KEY = {
 
