@@ -176,6 +176,7 @@ _pfhHandler = [{
    if ({_x distance _ied < 25} count allPlayers > 0 && (alive _bomber) && (!captive _bomber) && (!_iedJammed)) then {
 
           [[_ied], "FNC_EODS_EXPLOSION", false, false] spawn BIS_fnc_MP;
+          [_pfhHandler] call CBA_fnc_removePerFrameHandler;
       };
     //Add check for dead bomberman remove eh
     if ((!alive _bomber) ) then {

@@ -313,7 +313,34 @@ private ["_cadena","_autRingtone","_probabilidad","_restos","_espera","_syncro",
 
 				_tipoMetralla = "B_408_Ball";
 			};
+/*
+				case "EODS_122mm_USSR_IED_PP": {
+					_tipodebomba = "Bo_GBU12_LGB_MI10";
 
+					_numeroexplisiones = 1;
+
+					_numerofragmentos = 150;
+
+					_maxAfecDistancia = 180;
+
+					_radioCaida = 80;
+
+					_tipoMetralla = "B_408_Ball";
+				};
+				case "EODS_ied_B_PressurePlate": {
+					_tipodebomba = "Bo_GBU12_LGB_MI10";
+
+					_numeroexplisiones = 1;
+
+					_numerofragmentos = 150;
+
+					_maxAfecDistancia = 180;
+
+					_radioCaida = 80;
+
+					_tipoMetralla = "B_408_Ball";
+				};
+*/
     			default {
 
 				_tipodebomba = "R_80mm_HE";

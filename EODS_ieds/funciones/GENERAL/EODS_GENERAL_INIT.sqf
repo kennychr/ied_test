@@ -1,10 +1,10 @@
 /*
  	Name: [EODS] EXPLOSIVE ORDNANCE DISPOSAL SUITE
- 	
- 	Author(s): Monovdd (Carlos Alberto Arango Schütz)
+
+ 	Author(s): Monovdd (Carlos Alberto Arango Schï¿½tz)
 
  	Note: Do not modify this file without permission.
-	
+
 	Licence: http://creativecommons.org/licenses/by-nc-sa/4.0/
 */
 
@@ -17,6 +17,7 @@ if (!isServer) then {waitUntil {!isNull player};};
 
 call compile preprocessFileLineNumbers "\EODS_ieds\funciones\GENERAL\EODS_GENERAL_FUCTIONS.sqf";
 call compile preprocessFileLineNumbers "\EODS_ieds\funciones\GENERAL\EODS_GENERAL_FUCTIONS_CLIENTSIDE.sqf";
+
 
 sleep 5;
 

@@ -1,10 +1,10 @@
 /*
  	Name: [EODS] EXPLOSIVE ORDNANCE DISPOSAL SUITE
- 	
- 	Author(s): Monovdd (Carlos Alberto Arango Schütz)
+
+ 	Author(s): Monovdd (Carlos Alberto Arango Schï¿½tz)
 
  	Note: Do not modify this file without permission.
-	
+
 	Licence: http://creativecommons.org/licenses/by-nc-sa/4.0/
 */
 
@@ -18,23 +18,23 @@
 //FNC_EODS_CA_LOOP_CENTRAL
 
 //-------------------------------------------------------------------------------------------
-
+call compile preprocessFileLineNumbers "\EODS_ieds\funciones\PRESSURE_IEDS\EODS_PRESSURE_INIT.sqf";
 EODS_EXPLOSIVOS_EVENT = {
 
 		_arrayHit = _this select 0;
 		_ied = _arrayHit select 0;
 
 		_causante =  _arrayHit select 6 select 4;
-		
+
 		_esExplosvio = false;
 		_esBalaExplosiva = false;
-		
+
 		{
 			if(_causante iskindof _x) then {
 				_esExplosvio = true;
 			};
 		} foreach EODS_ehExplosiveSuperClasses;
-		
+
 		if(! _esExplosvio) then
 		{
 			_valorExplosivo = getNumber(configfile >> "CfgAmmo" >> format["%1", _causante] >> "explosive");
@@ -42,18 +42,18 @@ EODS_EXPLOSIVOS_EVENT = {
 				_esBalaExplosiva = true;
 			};
 		};
-		
+
 		{
 			if(_causante iskindof _x) then{
 				_esExplosvio = false;
 				_esBalaExplosiva = false;
 			}
-		} foreach EODS_projectilesToIgnore;		
-		
+		} foreach EODS_projectilesToIgnore;
+
 		if((_esExplosvio) or (_esBalaExplosiva)) then {
 
 			_posbilidadDeExplosion = 100;
-				
+
 			if((_causante iskindof "GrenadeCore") or (_causante iskindof "GrenadeHand") or (_causante iskindof "Grenade")) then { _posbilidadDeExplosion = 10; };
 
 			if(_esBalaExplosiva) then {_posbilidadDeExplosion = 15;};
@@ -62,7 +62,7 @@ EODS_EXPLOSIVOS_EVENT = {
 
 			if(_r <= _posbilidadDeExplosion) then {
 
-				_cadena = _ied getVariable "EODS_ieds_CADENA_GRUPO";			
+				_cadena = _ied getVariable "EODS_ieds_CADENA_GRUPO";
 
 				if (!(isNil "_cadena")) then {
 
@@ -75,10 +75,10 @@ EODS_EXPLOSIVOS_EVENT = {
 
 					} forEach _cadena;
 				};
-				
+
 				[[_ied], "EODS_REMOVER_EVENT_HANDLER", true, false] spawn BIS_fnc_MP;
 
-				[[_ied], "FNC_EODS_EXPLOSION", false, false] spawn BIS_fnc_MP;	
+				[[_ied], "FNC_EODS_EXPLOSION", false, false] spawn BIS_fnc_MP;
 			};
 		};
 };
@@ -90,6 +90,7 @@ private ["_ied","_impacto"];
 _ied = _this select 0;
 
 _impacto = _this select 4;
+
 
 	if (_impacto >= 5) then {
 
@@ -106,6 +107,8 @@ EODS_ANADIR_EVENT_HANDLER = {
 	_ied addEventHandler ["HitPart", {_this call EODS_EXPLOSIVOS_EVENT;}];
 
 	_ied addEventHandler ["EpeContact", {_this call EODS_IED_RECIBE_GOLPE;}];
+
+	
 };
 
 EODS_REMOVER_EVENT_HANDLER = {
@@ -135,23 +138,23 @@ EODS_EFECTOS_JUGADOR = {
 
 			addCamShake[20, 1+random 3, 25];
 
-			[] spawn {	
+			[] spawn {
 				private ["_blur"];
 				_blur = ppEffectCreate ["DynamicBlur", 474];
 				_blur ppEffectEnable true;
 				_blur ppEffectAdjust [0];
 				_blur ppEffectCommit 0;
-				
+
 				waitUntil {ppEffectCommitted _blur};
-				
+
 				_blur ppEffectAdjust [10];
 				_blur ppEffectCommit 0;
-				
+
 				_blur ppEffectAdjust [0];
 				_blur ppEffectCommit 5;
-				
+
 				waitUntil {ppEffectCommitted _blur};
-				
+
 				_blur ppEffectEnable false;
 				ppEffectDestroy _blur;
 			};
@@ -203,23 +206,23 @@ EODS_EFECTOS_JUGADOR_ATURDIMIENTO_SEVERO = {
 
 		playSound "sordera1";
 
-		[] spawn {	
+		[] spawn {
 			private ["_blur"];
 			_blur = ppEffectCreate ["DynamicBlur", 474];
 			_blur ppEffectEnable true;
 			_blur ppEffectAdjust [0];
 			_blur ppEffectCommit 0;
-					
+
 			waitUntil {ppEffectCommitted _blur};
-				
+
 			_blur ppEffectAdjust [10];
 			_blur ppEffectCommit 0;
-				
+
 			_blur ppEffectAdjust [0];
 			_blur ppEffectCommit 5;
-				
+
 			waitUntil {ppEffectCommitted _blur};
-				
+
 			_blur ppEffectEnable false;
 			ppEffectDestroy _blur;
 		};
@@ -234,23 +237,23 @@ EODS_EFECTOS_JUGADOR_ATURDIMIENTO_SEVERO = {
 
 		playSound "sordera1";
 
-		[] spawn {	
+		[] spawn {
 			private ["_blur"];
 			_blur = ppEffectCreate ["DynamicBlur", 474];
 			_blur ppEffectEnable true;
 			_blur ppEffectAdjust [0];
 			_blur ppEffectCommit 0;
-					
+
 			waitUntil {ppEffectCommitted _blur};
-				
+
 			_blur ppEffectAdjust [10];
 			_blur ppEffectCommit 0;
-				
+
 			_blur ppEffectAdjust [0];
 			_blur ppEffectCommit 5;
-				
+
 			waitUntil {ppEffectCommitted _blur};
-				
+
 			_blur ppEffectEnable false;
 			ppEffectDestroy _blur;
 		};
@@ -264,35 +267,35 @@ EODS_EFECTOS_JUGADOR_ATURDIMIENTO_SEVERO = {
 
 EODS_EFECTOS_JUGADOR_PERDIDA_EQUILIBRIO = {
 
-	for "_i" from 1 to 30 do{ 
+	for "_i" from 1 to 30 do{
 
 		if(alive player) then {
-	
+
 			_probabilidad = floor(random 100);
 
 			if(_probabilidad < 10) then {
-			
+
 				[player] spawn FNC_EODS_CAIDA;
 
 				playSound "sordera1";
 
-				[] spawn {	
+				[] spawn {
 					private ["_blur"];
 					_blur = ppEffectCreate ["DynamicBlur", 474];
 					_blur ppEffectEnable true;
 					_blur ppEffectAdjust [0];
 					_blur ppEffectCommit 0;
-					
+
 					waitUntil {ppEffectCommitted _blur};
-				
+
 					_blur ppEffectAdjust [10];
 					_blur ppEffectCommit 0;
-				
+
 					_blur ppEffectAdjust [0];
 					_blur ppEffectCommit 5;
-				
+
 					waitUntil {ppEffectCommitted _blur};
-				
+
 					_blur ppEffectEnable false;
 					ppEffectDestroy _blur;
 				};
@@ -347,12 +350,12 @@ EODS_EFECTOS_GENERAL = {
 
 		//if (_cantidadFuego > 0) then {
 
-			//for "_i" from 0 to _cantidadFuego - 1 do{ 
+			//for "_i" from 0 to _cantidadFuego - 1 do{
 
 				//[[_loc] , "EODS_EFECTOS_FUEGO", true, false] spawn BIS_fnc_MP;
 
 			//};
-		//};	
+		//};
 
 };
 
@@ -362,7 +365,7 @@ EODS_EFECTOS_NUBEPOLVO = {
 	//.1, .1, .1 dark gray
 	//0, 0, 0 black
 	_aslLoc = _this select 0;
-	
+
 
 	_smoke3 = "#particlesource" createVehicleLocal _aslLoc;
 	_smoke3 setposasl _aslLoc;
@@ -431,7 +434,7 @@ EODS_EFECTOS_FUEGO = {
 	_timpodeEspera2 = random 60;
 
 	_timpodeEspera2 = _timpodeEspera2 + 20;
-	
+
 	_thingToFling = "ArrowDesk_L_F" createVehicleLocal [0,0,0];
 	_thingToFling hideObject true;
 	_thingToFling setPos _loc;
@@ -441,9 +444,9 @@ EODS_EFECTOS_FUEGO = {
 	_source = "#particlesource" createVehicleLocal _loc;
 	_source setParticleClass "SmallDestructionFire";
 	_source attachto [_thingToFling,[0,0,0]];
-	
+
 	sleep _timpodeEspera2;
-	
+
 	_thingToFling setpos [0,0,0];
 	deletevehicle _source;
 	deletevehicle _thingToFling;

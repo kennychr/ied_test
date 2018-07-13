@@ -1,10 +1,10 @@
 /*
  	Name: [EODS] EXPLOSIVE ORDNANCE DISPOSAL SUITE
- 	
- 	Author(s): Monovdd (Carlos Alberto Arango Schütz)
+
+ 	Author(s): Monovdd (Carlos Alberto Arango Schï¿½tz)
 
  	Note: Do not modify this file without permission.
-	
+
 	Licence: http://creativecommons.org/licenses/by-nc-sa/4.0/
 */
 
@@ -13,6 +13,8 @@ EODS_ied_inventarios_disponibles = ["EODS_inventario_ied_01","EODS_inventario_ie
 EODS_ied_crear_falsos = ["EODS_inventario_ied_01","EODS_inventario_ied_02","EODS_inventario_ied_03","EODS_inventario_ied_04","EODS_inventario_ied_05","EODS_inventario_ied_06","EODS_inventario_ied_07","EODS_Uxo_01_Inv"];
 
 EODS_ied_tierras = ["EODS_tierra01_ied01","EODS_tierra01_ied02","EODS_tierra01_ied03","EODS_tierra01_ied04"];
+
+EODS_ied_pressureplate = ["EODS_122mm_USSR_IED_PP","EODS_ied_B_PressurePlate"];
 
 EODS_id_acciones_guardadas = [];
 

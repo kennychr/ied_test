@@ -34,7 +34,10 @@ class CfgPatches
 {
 	class EODS_ieds_main
 	{
-		units[] = {"EODS_ied01_armed","EODS_ied02_armed","EODS_ied03_armed","EODS_ied04_armed","EODS_ied05_armed","EODS_ied06_armed","EODS_ied07_armed","EODS_Fake_01","EODS_ied01","EODS_ied02","EODS_ied03","EODS_ied04","EODS_ied05","EODS_ied06","EODS_ied07","EODS_tierra01_ied01","EODS_tierra02_ied01","EODS_tierra01_ied02","EODS_tierra02_ied02","EODS_tierra01_ied03","EODS_tierra02_ied03","EODS_tierra01_ied04","EODS_tierra02_ied04","EODS_IED_HIDDEN_IN_OBJECT","EODS_IED_CELLPHONE_MODULE","EODS_IED_HIDDEN_MODULE","EODS_IED_CADENA_MODULE","EODS_IED_ARMAR_MODULE","EODS_Uxo_1","EODS_122mm_USSR_IED","EODS_Water_Container_IED","EODS_FuelCan_IED","EODS_122mm_USSR_IED_PP","EODS_ied_B_PressurePlate","EODS_FertilizerBag","EODS_FertilizerBag2_Pile","EODS_FertilizerBag3_Pile","EODS_FertilizerBag_2And3_Pile","EODS_CocaCan","EODS_Bullet_Case_Detonator","EODS_wire_spool","EODS_Water_Container","EODS_Water_Container2"};
+		units[] = {
+		"EODS_ied01_armed","EODS_ied02_armed","EODS_ied03_armed","EODS_ied04_armed","EODS_ied05_armed","EODS_ied06_armed","EODS_ied07_armed","EODS_Fake_01","EODS_ied01","EODS_ied02","EODS_ied03","EODS_ied04","EODS_ied05","EODS_ied06","EODS_ied07","EODS_tierra01_ied01","EODS_tierra02_ied01","EODS_tierra01_ied02","EODS_tierra02_ied02","EODS_tierra01_ied03","EODS_tierra02_ied03","EODS_tierra01_ied04","EODS_tierra02_ied04",
+		"EODS_IED_HIDDEN_IN_OBJECT","EODS_IED_CELLPHONE_MODULE","EODS_IED_HIDDEN_MODULE","EODS_IED_CADENA_MODULE","EODS_IED_ARMAR_MODULE","EODS_Uxo_1","EODS_122mm_USSR_IED","EODS_Water_Container_IED","EODS_FuelCan_IED","EODS_122mm_USSR_IED_PP","EODS_ied_B_PressurePlate","EODS_FertilizerBag","EODS_FertilizerBag2_Pile","EODS_FertilizerBag3_Pile","EODS_FertilizerBag_2And3_Pile","EODS_CocaCan","EODS_Bullet_Case_Detonator","EODS_wire_spool","EODS_Water_Container","EODS_Water_Container2"};
+
 		weapons[] = {"EODS_cellphone_02","EODS_inventario_ied_01","EODS_inventario_ied_02","EODS_inventario_ied_03","EODS_inventario_ied_04","EODS_inventario_ied_05","EODS_inventario_ied_06","EODS_inventario_ied_07","EODS_Uxo_01_Inv","EODS_inventario_ied_B_PressurePlate","EODS_inventario_122mm_USSR_IED","EODS_inventario_Water_Container_IED","EODS_inventario_FuelCan_IED","EODS_inventario_122mm_USSR_IED_PP"};
 		requiredVersion = 1;
 		requiredAddons[] = {"CBA_XEH","CBA_MAIN","A3_UI_F"};
@@ -1292,7 +1295,7 @@ class cfgVehicles
 		};
 		class Eventhandlers
 		{
-			init = "_ok = _this execVM '\EODS_ieds\funciones\GENERAL\EODS_GENERAL_INIT.sqf'";
+			//init = "_ok = _this execVM '\EODS_ieds\funciones\PRESSURE_IEDS\EODS_PRESSURE_INIT.sqf'";
 		};
 		class AnimationSources
 		{
@@ -1353,7 +1356,7 @@ class cfgVehicles
 			};
 		};
 	};
-	
+
 	class EODS_ied01: EODS_base_ied_cellphone
 	{
 		mapSize = 1;
@@ -1375,17 +1378,17 @@ class cfgVehicles
 			};
 		};
 	};
-	
+
 	class EODS_ied01_armed: EODS_ied01
 	{
 		displayName = "$STR_EODS_ieds_ied01_armed";
 		class Eventhandlers
 		{
-			
+
 			init = "_ok = _this execVM '\EODS_ieds\funciones\GENERAL\EODS_GENERAL_INIT.sqf';_armed = _this execVM '\EODS_ieds\funciones\armIED.sqf'";
 		};
 	};
-	
+
 	class EODS_ied02: EODS_base_ied_cellphone
 	{
 		mapSize = 1;
@@ -1407,17 +1410,17 @@ class cfgVehicles
 			};
 		};
 	};
-	
+
 	class EODS_ied02_armed: EODS_ied02
 	{
 		displayName = "$STR_EODS_ieds_ied02_armed";
 		class Eventhandlers
 		{
-			
+
 			init = "_ok = _this execVM '\EODS_ieds\funciones\GENERAL\EODS_GENERAL_INIT.sqf';_armed = _this execVM '\EODS_ieds\funciones\armIED.sqf'";
 		};
 	};
-	
+
 	class EODS_ied03: EODS_base_ied_cellphone
 	{
 		mapSize = 1;
@@ -1439,17 +1442,17 @@ class cfgVehicles
 			};
 		};
 	};
-	
+
 	class EODS_ied03_armed: EODS_ied03
 	{
 		displayName = "$STR_EODS_ieds_ied03_armed";
 		class Eventhandlers
 		{
-			
+
 			init = "_ok = _this execVM '\EODS_ieds\funciones\GENERAL\EODS_GENERAL_INIT.sqf';_armed = _this execVM '\EODS_ieds\funciones\armIED.sqf'";
 		};
 	};
-	
+
 	class EODS_ied04: EODS_base_ied_cellphone
 	{
 		mapSize = 1;
@@ -1471,17 +1474,17 @@ class cfgVehicles
 			};
 		};
 	};
-	
+
 	class EODS_ied04_armed: EODS_ied04
 	{
 		displayName = "$STR_EODS_ieds_ied04_armed";
 		class Eventhandlers
 		{
-			
+
 			init = "_ok = _this execVM '\EODS_ieds\funciones\GENERAL\EODS_GENERAL_INIT.sqf';_armed = _this execVM '\EODS_ieds\funciones\armIED.sqf'";
 		};
 	};
-	
+
 	class EODS_ied05: EODS_base_ied_cellphone
 	{
 		mapSize = 1;
@@ -1503,17 +1506,17 @@ class cfgVehicles
 			};
 		};
 	};
-	
+
 	class EODS_ied05_armed: EODS_ied05
 	{
 		displayName = "$STR_EODS_ieds_ied05_armed";
 		class Eventhandlers
 		{
-			
+
 			init = "_ok = _this execVM '\EODS_ieds\funciones\GENERAL\EODS_GENERAL_INIT.sqf';_armed = _this execVM '\EODS_ieds\funciones\armIED.sqf'";
 		};
 	};
-	
+
 	class EODS_ied06: EODS_base_ied_cellphone
 	{
 		mapSize = 1;
@@ -1535,17 +1538,17 @@ class cfgVehicles
 			};
 		};
 	};
-	
+
 	class EODS_ied06_armed: EODS_ied06
 	{
 		displayName = "$STR_EODS_ieds_ied06_armed";
 		class Eventhandlers
 		{
-			
+
 			init = "_ok = _this execVM '\EODS_ieds\funciones\GENERAL\EODS_GENERAL_INIT.sqf';_armed = _this execVM '\EODS_ieds\funciones\armIED.sqf'";
 		};
 	};
-	
+
 	class EODS_ied07: EODS_base_ied_cellphone
 	{
 		mapSize = 1;
@@ -1567,17 +1570,17 @@ class cfgVehicles
 			};
 		};
 	};
-	
+
 	class EODS_ied07_armed: EODS_ied07
 	{
 		displayName = "$STR_EODS_ieds_ied07_armed";
 		class Eventhandlers
 		{
-			
+
 			init = "_ok = _this execVM '\EODS_ieds\funciones\GENERAL\EODS_GENERAL_INIT.sqf';_armed = _this execVM '\EODS_ieds\funciones\armIED.sqf'";
 		};
 	};
-	
+
 	class EODS_122mm_USSR_IED: EODS_base_ied_cellphone
 	{
 		mapSize = 1;
@@ -1667,7 +1670,10 @@ class cfgVehicles
 		model = "\EODS_ieds\meshes\122mm_USSR_IED_PP.p3d";
 		vehicleClass = "EODS_ied_class";
 		picture = "\EODS_ieds\data\ied07_menu.paa";
-		class Eventhandlers{};
+		class Eventhandlers
+		{
+			//init = "_ok = _this execVM '\EODS_ieds\funciones\PRESSURE_IEDS\EODS_PRESSURE_INIT.sqf'";
+		};
 		class HitPoints: HitPoints
 		{
 			class HitIed: HitIed
@@ -1696,6 +1702,10 @@ class cfgVehicles
 		model = "EODS_ieds\meshes\Ied_PP01.p3d";
 		vehicleClass = "EODS_ied_class";
 		picture = "\EODS_ieds\data\ied07_menu.paa";
+		class Eventhandlers
+		{
+			//init = "_ok = _this execVM '\EODS_ieds\funciones\PRESSURE_IEDS\EODS_PRESSURE_INIT.sqf'";
+		};
 		class HitPoints: HitPoints
 		{
 			class HitIed: HitIed
