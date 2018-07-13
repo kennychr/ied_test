@@ -7,10 +7,13 @@ EODS_FNC_PRESSURE_PLATE = {
 
     _ied = _this select 0 select 0;
     _iedPos = getPos _ied;
-    _nearEntitiesCount = count (_iedPos nearEntities [["CAManBase","LandVehicle"], 2]);
-    if (_nearEntitiesCount > 0 ) then {
-//"DET" remoteExec ["hint",0];
-           //[[_ied], "FNC_EODS_EXPLOSION", false, false] spawn BIS_fnc_MP;
+    //_nearEntitiesCount = count (_iedPos nearEntities [["Man", "Air", "Car", "Motorcycle", "Tank"], 2]);
+    //DEBUG
+    //_nearEntitiesCount remoteExec ["hint",0];
+
+    //if (_nearEntitiesCount > 0 )
+    if ({_x distance _ied < 1} count allPlayers > 0 && (alive _ied) ) then {
+
 
            _posicion = getpos _ied;
            _tipodebomba = "Bo_GBU12_LGB_MI10";
@@ -25,5 +28,5 @@ EODS_FNC_PRESSURE_PLATE = {
 
            [_handol] call CBA_fnc_removePerFrameHandler;
        };
-    } , 0.1, [_ied]] call CBA_fnc_addPerFrameHandler;
+    } , 0.05, [_ied]] call CBA_fnc_addPerFrameHandler;
 };

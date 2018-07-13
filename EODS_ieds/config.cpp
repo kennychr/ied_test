@@ -1295,7 +1295,7 @@ class cfgVehicles
 		};
 		class Eventhandlers
 		{
-			//init = "_ok = _this execVM '\EODS_ieds\funciones\PRESSURE_IEDS\EODS_PRESSURE_INIT.sqf'";
+			init = "_ok = _this execVM '\EODS_ieds\funciones\PRESSURE_IEDS\EODS_PRESSURE_INIT.sqf'";
 		};
 		class AnimationSources
 		{
@@ -1665,14 +1665,14 @@ class cfgVehicles
 		mapSize = 1;
 		author = "MrEwok";
 		_generalMacro = "EODS_122mm_USSR_IED_PP";
-		scope = 0;
+		scope = 2;
 		displayName = "EODS 122mm_USSR_IED_PP";
 		model = "\EODS_ieds\meshes\122mm_USSR_IED_PP.p3d";
 		vehicleClass = "EODS_ied_class";
 		picture = "\EODS_ieds\data\ied07_menu.paa";
 		class Eventhandlers
 		{
-			//init = "_ok = _this execVM '\EODS_ieds\funciones\PRESSURE_IEDS\EODS_PRESSURE_INIT.sqf'";
+			init = "_ok = _this execVM '\EODS_ieds\funciones\PRESSURE_IEDS\EODS_PRESSURE_INIT.sqf'";
 		};
 		class HitPoints: HitPoints
 		{
@@ -1704,7 +1704,7 @@ class cfgVehicles
 		picture = "\EODS_ieds\data\ied07_menu.paa";
 		class Eventhandlers
 		{
-			//init = "_ok = _this execVM '\EODS_ieds\funciones\PRESSURE_IEDS\EODS_PRESSURE_INIT.sqf'";
+			init = "_ok = _this execVM '\EODS_ieds\funciones\PRESSURE_IEDS\EODS_PRESSURE_INIT.sqf'";
 		};
 		class HitPoints: HitPoints
 		{
