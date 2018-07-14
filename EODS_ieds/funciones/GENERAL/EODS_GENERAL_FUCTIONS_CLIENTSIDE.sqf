@@ -18,7 +18,7 @@
 //FNC_EODS_CA_LOOP_CENTRAL
 
 //-------------------------------------------------------------------------------------------
-call compile preprocessFileLineNumbers "\EODS_ieds\funciones\PRESSURE_IEDS\EODS_PRESSURE_INIT.sqf";
+
 EODS_EXPLOSIVOS_EVENT = {
 
 		_arrayHit = _this select 0;
@@ -108,7 +108,7 @@ EODS_ANADIR_EVENT_HANDLER = {
 
 	_ied addEventHandler ["EpeContact", {_this call EODS_IED_RECIBE_GOLPE;}];
 
-	
+
 };
 
 EODS_REMOVER_EVENT_HANDLER = {

@@ -12,7 +12,7 @@ EODS_FNC_PRESSURE_PLATE = {
     //_nearEntitiesCount remoteExec ["hint",0];
 
     //if (_nearEntitiesCount > 0 )
-    if ({_x distance _ied < 1} count allPlayers > 0 && (alive _ied) ) then {
+    if ({_x distance _ied < 4} count allPlayers > 0 && (alive _ied) ) then {
 
 
            _posicion = getpos _ied;
