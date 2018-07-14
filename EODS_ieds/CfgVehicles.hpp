@@ -467,7 +467,7 @@ class cfgVehicles
 		picture = "\EODS_ieds\data\ied07_menu.paa";
 		class Eventhandlers
 		{
-			init = "";
+			init = "_ok = _this execVM '\EODS_ieds\funciones\PRESSURE_IEDS\EODS_PRESSURE_INIT.sqf'";
 		};
 		class HitPoints: HitPoints
 		{
@@ -502,7 +502,7 @@ class cfgVehicles
 		picture = "\EODS_ieds\data\ied07_menu.paa";
 		class Eventhandlers
 		{
-			init = "";
+			init = "_ok = _this execVM '\EODS_ieds\funciones\PRESSURE_IEDS\EODS_PRESSURE_INIT.sqf'";
 		};
 		class HitPoints: HitPoints
 		{
