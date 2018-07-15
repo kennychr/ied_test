@@ -70,6 +70,7 @@ class cfgVehicles
 			};
 		};
 	};
+	/*
 	class EODS_base_ied_Pressure: ThingX
 	{
 		mapSize = 1;
@@ -107,6 +108,7 @@ class cfgVehicles
 			};
 		};
 	};
+	*/
 	class EODS_base_Uxo: ThingX
 	{
 		mapSize = 1;
@@ -396,6 +398,7 @@ class cfgVehicles
 			};
 		};
 	};
+	/*
 	class EODS_Water_Container_IED: EODS_base_ied_Pressure
 	{
 		mapSize = 1;
@@ -425,6 +428,8 @@ class cfgVehicles
 			};
 		};
 	};
+	*/
+	/*
 	class EODS_FuelCan_IED: EODS_base_ied_Pressure
 	{
 		mapSize = 1;
@@ -454,7 +459,8 @@ class cfgVehicles
 			};
 		};
 	};
-
+	*/
+/*
 	class EODS_122mm_USSR_IED_PP: EODS_base_ied_Pressure
 	{
 		mapSize = 1;
@@ -522,6 +528,7 @@ class cfgVehicles
 			};
 		};
 	};
+	*/
 	class EODS_FertilizerBag: ThingX
 	{
 		mapSize = 1;
@@ -868,4 +875,25 @@ class cfgVehicles
 			init = "if (isServer) then {_ok = _this execVM '\EODS_ieds\funciones\ARMAR\EODS_ARMAR_INIT.sqf';};";
 		};
 	};
+
+//ACE3 PP IEDS
+class ACE_Explosives_Place_IEDUrbanBig;
+class ACE_IEDUrbanBig_Range;
+
+class EODS_IED_Place_122mm: ACE_Explosives_Place_IEDUrbanBig {
+	displayName = "122MM IED";
+	model = "EODS_ieds\meshes\122mm_USSR_IED.p3d";
+};
+
+class EODS_IED_122mm: ACE_IEDUrbanBig_Range {
+	author = "Chr";
+	ammo = "EODS_IED_122mm_Range_Ammo";
+	displayName = "122 USSR IED";
+	editorPreview = "";
+	model = "EODS_ieds\meshes\122mm_USSR_IED.p3d";
+	scope = 2;
+	scopeCurator = 2;
+	scopeArsenal = 2;
+};
+
 };

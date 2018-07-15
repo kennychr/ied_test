@@ -28,7 +28,7 @@ IEDtypes = ["EODS_ied01","EODS_ied02","EODS_ied03","EODS_ied04","EODS_ied05","EO
 for [{_i=1},{_i<=EODSnumberOfIeds},{_i=_i+1}] do
 {
 	_iedName = IEDtypes call BIS_fnc_selectRandom;
-
+//TODO add check for pressureplate and place them on the road without a triggerman.
 
 	_iedarray =["Land_GarbagePallet_F","Land_CanisterFuel_F","Land_GarbageWashingMachine_F","Land_JunkPile_F","Land_CanisterPlastic_F","Land_Tyres_F","Land_GarbageBags_F","Land_Wreck_Truck_F","C_Offroad_01_F","C_Van_01_transport_F","C_Hatchback_01_F","LADAWreck","HMMWVWreck","UAZWreck"]; // Objects used as IEDs
 	_iedtype = _iedarray select (floor random (count _iedarray));
